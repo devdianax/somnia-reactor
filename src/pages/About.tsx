@@ -1,92 +1,95 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Shield, Zap, Users, Mail } from "lucide-react";
+import { ExternalLink, Shield, Zap, Users, Mail, Cpu, BrainCircuit, Activity } from "lucide-react";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-hero pt-24 pb-16">
+    <div className="min-h-screen bg-gradient-hero pt-24 pb-16 text-foreground">
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4">
-            About <span className="gradient-text">DeFi Tracker</span>
+        <div className="text-center mb-12 relative">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-64 h-64 bg-reactor-purple/10 blur-[80px] rounded-full" />
+          <h1 className="text-6xl font-black mb-4 tracking-tighter italic">
+            About <span className="bg-gradient-reactor bg-clip-text text-transparent">Somnia Reactor</span>
           </h1>
-          <p className="text-xl text-muted-foreground">
-            Real-time blockchain tracking powered by Somnia Data Streams
+          <p className="text-xl text-muted-foreground font-medium uppercase tracking-widest text-sm font-mono">
+            Autonomous DeFi Intelligence // Powered by Somnia Reactivity
           </p>
         </div>
 
-        {/* What is Somnia */}
-        <Card className="glass border-border mb-8">
+        {/* What is Somnia Reactor */}
+        <Card className="glass border-white/5 mb-8 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-reactor" />
           <CardContent className="p-8">
-            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <Zap className="w-6 h-6 text-accent" />
-              What is Somnia Data Streams?
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 italic tracking-tight">
+              <BrainCircuit className="w-6 h-6 text-reactor-purple" />
+              Intelligence at Sub-Second Latency
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Somnia Data Streams is a revolutionary real-time blockchain data infrastructure that
-              enables instant access to on-chain events, token prices, and transaction data. Unlike
-              traditional polling methods, Somnia provides push-based data delivery, ensuring you
-              never miss a market movement or transaction.
+              Somnia Reactor is a high-performance autonomous intelligence engine built on the 
+              <strong> Somnia Reactivity SDK</strong>. Unlike traditional DeFi dashboards that rely 
+              on polling and siloed data, the Reactor utilizes native on-chain triggers to monitor 
+              market fluctuations and portfolio health in real-time.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Our platform leverages this technology to deliver millisecond-level updates to your
-              portfolio, giving you the edge you need in fast-moving DeFi markets.
+              By leveraging the <strong>BlockTick</strong> system event, the Reactor Engine 
+              evaluates every single block for yield rebalancing and arbitrage opportunities, 
+              ensuring your assets are always where the highest efficiency is detected.
             </p>
           </CardContent>
         </Card>
 
-        {/* How It Works */}
-        <Card className="glass border-border mb-8">
+        {/* Core Architecture */}
+        <Card className="glass border-white/5 mb-8">
           <CardContent className="p-8">
-            <h2 className="text-2xl font-bold mb-6">How Real-Time Tracking Works</h2>
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 italic tracking-tight">
+              <Cpu className="w-6 h-6 text-reactor-blue" />
+              The Reactor Core Architecture
+            </h2>
             <div className="space-y-6">
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0 glow">
-                  <span className="text-lg font-bold">1</span>
+                <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0 glow font-black italic">
+                  01
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Connect Your Wallet</h3>
+                  <h3 className="font-bold text-lg mb-1 group-hover:text-reactor-blue transition-colors">Atomic Connection</h3>
                   <p className="text-sm text-muted-foreground">
-                    Securely connect your Web3 wallet to grant read-only access to your addresses
+                    Direct integration with Somnia Testnet using sub-second web-socket streams for millisecond state awareness.
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0 glow">
-                  <span className="text-lg font-bold">2</span>
+                <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0 glow font-black italic">
+                  02
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Stream Subscription</h3>
+                  <h3 className="font-bold text-lg mb-1">Reactive Subscription</h3>
                   <p className="text-sm text-muted-foreground">
-                    We subscribe to relevant Somnia data streams for your wallet addresses and
-                    tracked tokens
+                    The engine subscribes to the Somnia Reactivity Precompile (0x0100) to receive BlockTick signals the moment a block is confirmed.
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0 glow">
-                  <span className="text-lg font-bold">3</span>
+                <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0 glow font-black italic">
+                  03
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Real-Time Updates</h3>
+                  <h3 className="font-bold text-lg mb-1">Intent Detection</h3>
                   <p className="text-sm text-muted-foreground">
-                    As events occur on-chain, data is pushed instantly to your dashboard with zero
-                    delay
+                    Proprietary algorithms analyze liquidity depth and APY spreads to generate executable intents for yield capture.
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0 glow">
-                  <span className="text-lg font-bold">4</span>
+                <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0 glow font-black italic">
+                  04
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Instant Notifications</h3>
+                  <h3 className="font-bold text-lg mb-1">Autonomous Guard</h3>
                   <p className="text-sm text-muted-foreground">
-                    Receive alerts for price changes, transactions, and yield updates the moment
-                    they happen
+                    Sub-second liquidation protection and volatility monitoring ensures portfolio safety in rapidly shifting DeFi markets.
                   </p>
                 </div>
               </div>
@@ -94,62 +97,51 @@ const About = () => {
           </CardContent>
         </Card>
 
-        {/* Security & Privacy */}
-        <Card className="glass border-border mb-8">
+        {/* Technical Specs */}
+        <Card className="glass border-white/5 mb-8 bg-black/20">
           <CardContent className="p-8">
-            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <Shield className="w-6 h-6 text-success" />
-              Security & Privacy
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 italic tracking-tight text-reactor-pink">
+              <Activity className="w-6 h-6" />
+              Technical Specifications
             </h2>
-            <div className="space-y-3 text-muted-foreground">
-              <div className="flex gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                <p>
-                  <strong className="text-foreground">Read-only access:</strong> We never request
-                  permissions to move your funds
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg bg-white/5 border border-white/5 font-mono text-xs">
+                <div className="text-reactor-pink font-bold mb-1 uppercase tracking-tighter">DATA INFRASTRUCTURE</div>
+                <div className="opacity-70">Somnia Data Streams (SDS-1)</div>
               </div>
-              <div className="flex gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                <p>
-                  <strong className="text-foreground">No private keys:</strong> Your keys remain
-                  secure in your wallet at all times
-                </p>
+              <div className="p-4 rounded-lg bg-white/5 border border-white/5 font-mono text-xs">
+                <div className="text-reactor-pink font-bold mb-1 uppercase tracking-tighter">REACTIVE ENGINE</div>
+                <div className="opacity-70">BlockTick Event (Precompile 0x0100)</div>
               </div>
-              <div className="flex gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                <p>
-                  <strong className="text-foreground">Encrypted connections:</strong> All data
-                  streams use end-to-end encryption
-                </p>
+              <div className="p-4 rounded-lg bg-white/5 border border-white/5 font-mono text-xs">
+                <div className="text-reactor-pink font-bold mb-1 uppercase tracking-tighter">NETWORK</div>
+                <div className="opacity-70">Somnia Testnet (Dream-RPC)</div>
               </div>
-              <div className="flex gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                <p>
-                  <strong className="text-foreground">Open source:</strong> Our code is audited and
-                  publicly available
-                </p>
+              <div className="p-4 rounded-lg bg-white/5 border border-white/5 font-mono text-xs">
+                <div className="text-reactor-pink font-bold mb-1 uppercase tracking-tighter">RESPONSE LATENCY</div>
+                <div className="opacity-70">&lt; 1000ms (Atomic Block Update)</div>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Contact */}
-        <Card className="glass border-border">
-          <CardContent className="p-8 text-center">
-            <Users className="w-12 h-12 text-accent mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-3">Join Our Community</h2>
-            <p className="text-muted-foreground mb-6">
-              Connect with other users, get support, and stay updated with the latest features
+        {/* Community */}
+        <Card className="glass border-white/5">
+          <CardContent className="p-8 text-center bg-gradient-hero rounded-3xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-reactor opacity-[0.05]" />
+            <Users className="w-12 h-12 text-reactor-blue mx-auto mb-4" />
+            <h2 className="text-3xl font-black mb-3 italic tracking-tighter">INITIALIZE EXPLORATION</h2>
+            <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+              Join the new era of event-driven DeFi. Contribute to the Reactor core and build the future of autonomous finance.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button className="bg-gradient-accent hover:opacity-90 gap-2">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+              <Button className="bg-gradient-reactor hover:opacity-90 gap-2 font-bold italic tracking-tight shadow-glow">
                 <Mail className="w-4 h-4" />
-                Contact Support
+                GET DEV ACCESS
               </Button>
-              <Button variant="outline" className="glass border-border gap-2">
+              <Button variant="outline" className="glass border-white/10 gap-2 font-bold">
                 <ExternalLink className="w-4 h-4" />
-                Documentation
+                SDK CORE DOCS
               </Button>
             </div>
           </CardContent>

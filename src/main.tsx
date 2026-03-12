@@ -1,19 +1,7 @@
+import "./polyfills";
 import { createRoot } from "react-dom/client";
-import { Buffer } from "buffer";
 import App from "./App.tsx";
 import "./index.css";
-
-if (typeof window !== "undefined") {
-	window.Buffer = Buffer;
-	// @ts-expect-error - global is needed for some packages
-	window.global = window;
-	
-	if (!window.Buffer) {
-		console.error('Failed to load Buffer polyfill')
-	} else {
-		console.log('Buffer polyfill loaded successfully')
-	}
-}
 
 const rootElement = document.getElementById("root");
 
