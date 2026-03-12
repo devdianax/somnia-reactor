@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Wallet, Activity, TrendingUp, Bell, Settings, BookOpen, LogOut } from "lucide-react";
+import { Wallet, Activity, TrendingUp, Bell, Settings, BookOpen, LogOut, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useWallet } from "@/contexts/WalletContext";
@@ -43,9 +43,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center glow">
-            <Wallet className="w-6 h-6 text-primary-foreground" />
+            <Cpu className="w-6 h-6 text-white" />
           </div>
-          <span className="text-xl font-bold gradient-text">DeFi Tracker</span>
+          <span className="text-xl font-bold tracking-tighter bg-gradient-reactor bg-clip-text text-transparent italic">Somnia Reactor</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-1">

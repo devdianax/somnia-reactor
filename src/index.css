@@ -44,12 +44,17 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
     
-    --gradient-primary: linear-gradient(135deg, hsl(240 50% 20%), hsl(217 91% 40%));
-    --gradient-accent: linear-gradient(135deg, hsl(180 100% 40%), hsl(217 91% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(240 30% 8%) 0%, hsl(240 50% 15%) 50%, hsl(217 60% 20%) 100%);
+    --reactor-purple: 270 100% 60%;
+    --reactor-pink: 320 100% 60%;
+    --reactor-blue: 190 100% 50%;
     
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
-    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --gradient-primary: linear-gradient(135deg, hsl(270 100% 30%), hsl(320 100% 40%));
+    --gradient-accent: linear-gradient(135deg, hsl(190 100% 40%), hsl(270 100% 60%));
+    --gradient-hero: radial-gradient(circle at top right, hsl(320 50% 10%), hsl(270 40% 5%)), linear-gradient(135deg, hsl(240 30% 8%) 0%, hsl(240 50% 15%) 50%, hsl(217 60% 20%) 100%);
+    --gradient-reactor: linear-gradient(90deg, hsl(var(--reactor-blue)), hsl(var(--reactor-purple)), hsl(var(--reactor-pink)));
+    
+    --shadow-glow: 0 0 30px hsl(var(--reactor-purple) / 0.4);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.6);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
