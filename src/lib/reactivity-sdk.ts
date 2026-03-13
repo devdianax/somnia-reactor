@@ -64,12 +64,31 @@ class SomniaReactorSDK {
 
 		try {
 			const subscription = await this.sdk.subscribe({
-				emitter: SOMNIA_REACTIVITY_PRECOMPILE_ADDRESS,
-				event: 'BlockTick(uint64 blockNumber)',
-				callback: (event: any) => {
+				eventContractSources: [SOMNIA_REACTIVITY_PRECOMPILE_ADDRESS as `0x${string}`],
+				ethCalls: [],
+				onlyPushChanges: false,
+				onData: (data: any) => {
 					// Transform raw event data to BlockTickData
-					// Based on docs, blockNumber is likely in the event args
-					const blockNumber = event.args?.[0] || BigInt(0)
+					// From types: SubscriptionCallback has result: { topics, data, simulationResults }
+					const result = data.result || data;
+					const topics = result.topics || [];
+					const eventData = result.data || '0x';
+					
+					// BlockTick(uint64 blockNumber)
+					// If blockNumber is not in topics, it's in data
+					let blockNumber = BigInt(0);
+					try {
+						if (topics.length > 1) {
+							// For indexed params
+							blockNumber = BigInt(topics[1]);
+						} else if (eventData !== '0x') {
+							// For non-indexed params
+							blockNumber = BigInt(eventData);
+						}
+					} catch (e) {
+						blockNumber = BigInt(Math.floor(Date.now() / 1000));
+					}
+
 					callback({
 						blockNumber,
 						timestamp: Math.floor(Date.now() / 1000),
