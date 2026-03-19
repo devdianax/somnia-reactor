@@ -1,7 +1,7 @@
 import { createPublicClient, createWalletClient, http, webSocket } from 'viem'
 import { privateKeyToAccount } from 'viem/accounts'
 import { somniaTestnet } from './wagmi-config'
-import { SDK } from '@somnia-chain/reactivity'
+import { SDK } from '@somnia-chain/streams'
 
 // The Somnia Reactivity Precompile Address for system events
 export const SOMNIA_REACTIVITY_PRECOMPILE_ADDRESS = '0x0000000000000000000000000000000000000100'
