@@ -71,12 +71,6 @@ The Reactor Command Center will be available at `http://localhost:8080`.
 - `src/hooks/use-somnia-streams.ts`: Reactive hooks for UI synchronization.
 - `src/pages/Dashboard.tsx`: Main Command & Control Center interface.
 
-## 🏆 Hackathon Submission
-
-This project is submitted to the **Somnia Reactivity Hackathon**. It demonstrates technically impressive use of the Reactivity SDK to build a functional prototype of autonomous DeFi intelligence.
-
----
-
 ## License
 
 MIT
